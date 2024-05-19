@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'barca-bg-1': "url('/barca-bg-2.jpeg')",
+        'barca-bg-2': "url('/barca-bg.webp')",
+        'barca-bg-3': "url('/barca-bg-3.png')"
+      },
       colors: {
         "barca-red": "#A50044",
         "barca-yellow": "#EDBB00",
