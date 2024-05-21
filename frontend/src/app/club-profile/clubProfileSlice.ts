@@ -1,5 +1,6 @@
 "use client";
 
+import { RootState } from "@/lib/store";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface ClubProfile {
@@ -329,8 +330,8 @@ const initialState: any = {
   ],
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const clubProfileSlice = createSlice({
+  name: "clubProfile",
   initialState,
   reducers: {
     increment: (state) => {
@@ -345,6 +346,14 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount } =
+  clubProfileSlice.actions;
 
-export default counterSlice.reducer;
+export const selectClubFacts = (state: RootState) => state.clubProfile.facts;
+
+export const selectStadium = (state: RootState) => state.clubProfile.stadium;
+
+export const selectHistoricImages = (state: RootState) =>
+  state.clubProfile.historicImages;
+
+export default clubProfileSlice.reducer;
